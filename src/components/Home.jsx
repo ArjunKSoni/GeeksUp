@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BiDotsVerticalRounded, BiSearchAlt2 } from 'react-icons/bi';
 import { BsFillChatDotsFill } from 'react-icons/bs';
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
             <div style={{ backgroundColor: "rgb(18, 18, 18)", height: "85%" }} className='text-white overflow-scroll'>
                 {chat.map((e, i) => {
                     return (
-                        <div key={i} className='m-4 pb-2 flex items-center justify-between'>
+                        <Link to={"/chat"} state={{ img: "boy.png", name: "Arjun", chats: ["hi", "jo"] }} key={i} className='m-4 pb-2 flex items-center justify-between'>
                             <div className='flex items-center justify-center'>
                                 <div style={{ width: "50px", height: "50px" }} className='rounded-full bg-white overflow-hidden'><img src="boy.png" width={"60px"} alt="" /></div>
                                 <div className='ml-3'>
@@ -37,7 +37,7 @@ export default function Home() {
                             </div>
 
                             <div>Time</div>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>
