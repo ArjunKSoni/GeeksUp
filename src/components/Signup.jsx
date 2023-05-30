@@ -17,6 +17,7 @@ export default function Signup() {
     }
     const onclick = async (e) => {
         e.preventDefault();
+        await register(user);
         navigate("/home")
     }
 
