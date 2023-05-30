@@ -28,7 +28,7 @@ export default function Chat(props) {
                     <h1 className='font-bold text-xl'>{name}</h1>
                 </div>
             </div>
-            <div className=' overflow-scroll' id='Box' style={{ maxHeight: "77%" }}>
+            <div className=' overflow-scroll no-scrollbar' id='Box' style={{ maxHeight: "77%" }}>
                 {chat.map((e, i) => {
                     return (
                         <div key={i} className="w-full flex items-center justify-end p-2 text-white px-3">
