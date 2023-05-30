@@ -20,3 +20,20 @@ input:focus {
   font-size: 17px;
   color: white;
 }
+.login-main {
+  background: url("https://cdn.pixabay.com/photo/2018/10/14/13/01/ruin-3746423_1280.jpg") center center/cover;
+}
+
+.login {
+  background-color: #000000a0;
+  box-shadow: 0px 0px 30px 9px;
+}
+
+.input2 input {
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: solid green 3px;
+  font-size: 17px;
+  background-color: transparent;
+  color: white;
+}

@@ -16,12 +16,12 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path={`/login`} element={<Login />} />
+          <Route exact path={`/`} element={<Login />} />
           <Route exact path='/signup' element={<Signup />} />
           <Route exact path='/chat' element={<Chat />} />
           <Route exact path='/request' element={<Request />} />
           <Route exact path='/search' element={<Search />} />
-          <Route exact path='/' element={<Home />} />
+          <Route exact path='/home' element={<Home />} />
         </Routes>
       </Router>
     </div>
