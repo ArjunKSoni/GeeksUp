@@ -37,3 +37,16 @@ input:focus {
   background-color: transparent;
   color: white;
 }
+.input3 input {
+  border: none;
+  width: 80%;
+  font-size: 17px;
+  background-color: transparent;
+  color: black;
+}
+
+.inout3 input:focus {
+  outline: none !important;
+  font-size: 17px;
+  color: black;
+}
