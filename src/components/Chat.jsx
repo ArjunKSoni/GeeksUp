@@ -4,7 +4,14 @@ import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { BiSend } from 'react-icons/bi';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-export default function Chat(props) {
+export default function Chat() {
+
+    const enter = (e) => {
+        if (e.key === 'Enter') {
+            if (newchat !== "") { setchat(chat.concat(newchat)); setnewchat(""); scrollToBottom("Box"); infocus() }
+        }
+    }
+
     const infocus = () => {
         document.getElementById("input").focus()
     }
@@ -32,7 +39,7 @@ export default function Chat(props) {
                 {chat.map((e, i) => {
                     return (
                         <div key={i} className="w-full flex items-center justify-end p-2 text-white px-3">
-                            <div style={{ maxWidth: "80%", borderRadius: "20px 20px 0px 20px" }} className='bg-blue-600 p-2'>
+                            <div style={{ maxWidth: "80%", borderRadius: "20px 20px 0px 20px" }} className='bg-blue-600 flex flex-col text-lg p-2'>
                                 {e}
                             </div>
                         </div>)
@@ -40,8 +47,8 @@ export default function Chat(props) {
             </div>
             <div style={{ height: "15vh" }} className='absolute p-4 flex items-center justify-center bottom-0 left-0  w-screen z-50'>
                 <div style={{ width: "100%" }} className='bg-white input3 flex items-center justify-center py-1 rounded px-2'>
-                    <input id='input' value={newchat} onChange={(e) => { setnewchat(e.target.value) }} type="text" placeholder="Reply to @Rohit Yadav" />
-                    <GrAttachment className='ml-2 text-xl' /><BiSend onClick={(e) => { if (newchat !== "") { setchat(chat.concat(newchat)); setnewchat(""); scrollToBottom("Box"); infocus() } }} className='ml-4 text-xl' />
+                    <input id='input' onKeyDown={(e) => enter(e)} value={newchat} onChange={(e) => { setnewchat(e.target.value) }} type="text" placeholder="Reply to @Rohit Yadav" />
+                    <GrAttachment className='ml-2 text-2xl' /><BiSend id='send' onClick={(e) => { if (newchat !== "") { setchat(chat.concat(newchat)); setnewchat(""); scrollToBottom("Box"); infocus() } }} className='ml-4 text-4xl' />
                 </div>
             </div>
         </div>
