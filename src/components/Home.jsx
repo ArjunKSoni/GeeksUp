@@ -12,7 +12,7 @@ export default function Home() {
         <div className='h-screen'>
             <div style={{ backgroundColor: "rgb(40, 39, 39)", height: "15%" }} className='p-3'>
                 <div className='flex items-center mb-2 justify-between'>
-                    <h2 className='text-gray-300 font-bold text-xl'>GeeksUp</h2>
+                    <h2 className='text-gray-300 font-bold text-xl'>GeeksApp</h2>
                     <BiDotsVerticalRounded onClick={(e) => { logout === "none" ? setout("block") : setout("none") }} className='text-2xl text-gray-300' />
                     <div style={{ display: logout, width: "100px" }} className='absolute rounded-xl overflow-hidden bg-black top-12 right-0 z-10'>
                         <button className='w-full p-3  bg-black  hover:bg-gray-700 font-bold text-white'>Profile</button>
