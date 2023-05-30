@@ -5,20 +5,37 @@ import Authcontext from './context/authcontext';
 
 
 export default function Signup() {
-    const { register } = useContext(Authcontext);
+    const { token, setToken, setpayload, setUser } = useContext(Authcontext);
     const [user, setuser] = useState({
         name: "",
         email: "",
         password: "",
-        Mobile: ""
+        mobile: ""
     })
     const onchange = (e) => {
         setuser({ ...user, [e.target.name]: e.target.value })
     }
     const onclick = async (e) => {
         e.preventDefault();
-        await register(user);
-        navigate("/home")
+        try {
+            const apicall = await fetch(`http://127.0.0.1:4000/api/auth/register`, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                }, body: JSON.stringify({ user: user.name, email: user.email, password: user.password, mobileNo: user.mobile }),
+            })
+            let data = await apicall.json()
+            console.log(data)
+            await setpayload(data.payload)
+            await setToken(data.authToken)
+            await setUser(data.user)
+            if (data.success === "fail") { alert(data.message) }
+            !data.authToken ? console.log("error") : navigate("/home");
+            console.log(token);
+        } catch (error) {
+            console.log(error);
+        }
+
     }
 
     const navigate = useNavigate()
