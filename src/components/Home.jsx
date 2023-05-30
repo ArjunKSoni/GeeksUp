@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiDotsVerticalRounded, BiSearchAlt2 } from 'react-icons/bi';
+import { BsFillChatDotsFill } from 'react-icons/bs';
 
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
             </div>
             <div style={{ backgroundColor: "rgb(18, 18, 18)", height: "85%" }} className=''>
                 hi
+            </div>
+            <div style={{ width: "60px", height: "60px" }} className='absolute flex  items-center justify-center bg-green-500 text-white rounded-full bottom-6 right-6'>
+                <BsFillChatDotsFill className='text-3xl' />
             </div>
         </div>
     )
